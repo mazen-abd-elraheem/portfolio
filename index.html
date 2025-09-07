@@ -51,7 +51,7 @@
         .loader-ring:nth-child(2) { width: 60px; height: 60px; top: 10px; left: 10px; border-right-color: var(--secondary-color); animation: spin 1.5s linear infinite reverse; }
         .loader-ring:nth-child(3) { width: 40px; height: 40px; top: 20px; left: 20px; border-bottom-color: var(--accent-color); animation: spin 2s linear infinite; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        
+
         /* Enhanced Animated Background */
         .animated-bg {
             position: fixed;
@@ -121,24 +121,24 @@
             animation-delay: -10s;
         }
         @keyframes float3D {
-            0%, 100% { 
+            0%, 100% {
                 transform: translateY(0) translateX(0) rotateZ(0deg) scale(1);
                 border-radius: 50%;
             }
-            25% { 
+            25% {
                 transform: translateY(-150px) translateX(50px) rotateZ(90deg) scale(1.2);
                 border-radius: 30%;
             }
-            50% { 
+            50% {
                 transform: translateY(-300px) translateX(-30px) rotateZ(180deg) scale(0.8);
                 border-radius: 10%;
             }
-            75% { 
+            75% {
                 transform: translateY(-150px) translateX(-70px) rotateZ(270deg) scale(1.1);
                 border-radius: 40%;
             }
         }
-        
+
         /* Floating 3D Elements */
         .floating-3d-element {
             position: absolute;
@@ -168,24 +168,24 @@
             background: var(--gradient-3);
         }
         @keyframes float3DElement {
-            0%, 100% { 
+            0%, 100% {
                 transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0deg);
                 opacity: 0.1;
             }
-            25% { 
+            25% {
                 transform: translate3d(50px, -100px, 50px) rotate3d(1, 0, 1, 90deg);
                 opacity: 0.3;
             }
-            50% { 
+            50% {
                 transform: translate3d(-30px, -200px, -30px) rotate3d(0, 1, 1, 180deg);
                 opacity: 0.2;
             }
-            75% { 
+            75% {
                 transform: translate3d(-80px, -100px, 80px) rotate3d(1, 1, 0, 270deg);
                 opacity: 0.4;
             }
         }
-        
+
         /* Holographic Cursor */
         .holographic-cursor {
             width: 30px;
@@ -218,7 +218,7 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        
+
         /* Scroll Progress */
         .scroll-indicator {
             position: fixed;
@@ -236,7 +236,7 @@
             transition: width 0.1s ease;
             box-shadow: var(--neon-glow) var(--primary-color);
         }
-        
+
         /* Navigation - Responsive */
         .navbar {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
@@ -259,7 +259,7 @@
             background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             margin-right: 15px;
         }
-        
+
         /* Hamburger Menu */
         .hamburger {
             display: none;
@@ -277,7 +277,7 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-        
+
         /* General Section Styling */
         .section {
             padding: 120px 0; position: relative; opacity: 0;
@@ -295,7 +295,7 @@
             transform: translateX(-50%); width: 100px; height: 3px;
             background: var(--gradient-1); box-shadow: 0 0 15px var(--primary-color); border-radius: 2px;
         }
-        
+
         /* Hero Section (Cover) */
         #cover { min-height: 100vh; display: flex; align-items: center; position: relative; }
         .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width:100%; }
@@ -342,7 +342,7 @@
         .cta-holographic::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--gradient-1); transition: all 0.5s ease; z-index: -1; }
         .cta-holographic:hover::before { left: 0; }
         .cta-holographic:hover { color: var(--dark-bg); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 245, 255, 0.4); }
-        
+
         /* Enhanced Holographic Display */
         .holographic-display {
             perspective: 1200px;
@@ -388,7 +388,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, 
+            background: linear-gradient(45deg,
                 rgba(0, 245, 255, 0.05) 0%,
                 rgba(124, 58, 237, 0.05) 50%,
                 rgba(255, 0, 128, 0.05) 100%);
@@ -428,7 +428,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--primary-color);
-            box-shadow: 
+            box-shadow:
                 var(--neon-glow) var(--primary-color),
                 inset 0 0 30px rgba(0, 245, 255, 0.3);
             margin-bottom: 20px;
@@ -473,14 +473,14 @@
             0%, 98%, 100% { opacity: 1; }
             99% { opacity: 0.8; }
         }
-        
+
         /* About Section */
         #about .about-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
         #about .about-text p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 20px; }
         #about .about-image-container { perspective: 1000px; }
         #about .about-image-container img { width: 100%; border-radius: 20px; box-shadow: 0 0 50px rgba(124, 58, 237, 0.3); border: 2px solid rgba(124, 58, 237, 0.4); transition: transform 0.5s ease; }
         #about .about-image-container:hover img { transform: rotateY(10deg) rotateX(5deg) scale(1.05); }
-        
+
         /* Timeline for Experience & Education */
         .timeline { position: relative; max-width: 900px; margin: 0 auto; }
         .timeline::after { content: ''; position: absolute; width: 3px; background-image: linear-gradient(to bottom, transparent, var(--primary-color), transparent); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
@@ -498,7 +498,7 @@
         .timeline-content ul { list-style: none; padding-left: 0; color: var(--text-gray); }
         .timeline-content li { padding-left: 20px; position: relative; margin-bottom: 8px; }
         .timeline-content li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--primary-color); }
-        
+
         /* Special animation for Kustom Zone project */
         .timeline-item.kustom-zone .timeline-content {
             position: relative;
@@ -539,12 +539,12 @@
             0%, 100% { transform: scaleX(0); }
             50% { transform: scaleX(1); }
         }
-        
+
         /* Projects Section */
         .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
         .project-card {
             background: var(--card-bg); border: 1px solid var(--card-border); padding: 40px;
-            border-radius: 20px; backdrop-filter: blur(10px); 
+            border-radius: 20px; backdrop-filter: blur(10px);
             transition: all 0.4s ease; transform-style: preserve-3d;
             position: relative; overflow: hidden;
         }
@@ -562,8 +562,8 @@
         .project-card:hover::before {
             transform: translateX(100%);
         }
-        .project-card:hover { 
-            transform: translateY(-10px) rotateX(5deg); 
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
             box-shadow: 0 20px 50px rgba(0, 245, 255, 0.2);
             border-color: var(--primary-color);
         }
@@ -582,12 +582,12 @@
             text-decoration: none; font-weight: 500; transition: all 0.3s ease;
         }
         .project-link:hover { transform: translateX(10px); }
-        
+
         /* Skills Section - Fixed Flip Cards */
         .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; perspective: 1500px; }
         .skill-card {
             height: 350px; position: relative; cursor: pointer;
-            transform-style: preserve-3d; 
+            transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.65, 0.05, 0.36, 1);
         }
         .skill-card:hover {
@@ -644,11 +644,52 @@
             color: var(--primary-color); margin-right: 10px;
             font-size: 0.8rem;
         }
-        
+
+        /* Services Section */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+            border-color: var(--accent-color);
+        }
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+        }
+        .service-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.7rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
         /* Education Section */
         .education-card {
             background: var(--card-bg); border: 1px solid var(--card-border); padding: 40px;
-            border-radius: 20px; backdrop-filter: blur(10px); 
+            border-radius: 20px; backdrop-filter: blur(10px);
             transition: all 0.4s ease; position: relative;
             overflow: hidden;
         }
@@ -672,20 +713,20 @@
             background: rgba(124, 58, 237, 0.1); color: var(--accent-color); padding: 5px 12px;
             border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(124, 58, 237, 0.3);
         }
-        
+
         /* Achievements Section */
         .achievements-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .achievement-item { background: var(--card-bg); border: 1px solid var(--card-border); padding: 30px; border-radius: 15px; display: flex; align-items: center; transition: all 0.3s ease; }
         .achievement-item:hover { transform: translateY(-5px); border-color: var(--secondary-color); }
         .achievement-icon { font-size: 2rem; color: var(--secondary-color); margin-right: 20px; text-shadow: 0 0 15px var(--secondary-color); }
-        
+
         /* Testimonials Section */
         .testimonial-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 50px; border-radius: 20px; text-align: center; max-width: 800px; margin: 0 auto; backdrop-filter: blur(10px); }
         .testimonial-card blockquote { font-size: 1.3rem; font-style: italic; color: var(--text-gray); margin-bottom: 30px; position: relative; }
         .testimonial-card blockquote::before { content: '\f10d'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 2rem; color: var(--primary-color); position: absolute; top: -20px; left: -30px; opacity: 0.2; }
         .testimonial-author { font-weight: 700; color: var(--primary-color); font-size: 1.1rem; }
         .testimonial-position { color: var(--text-gray); font-size: 0.9rem; }
-        
+
         /* Contact Section */
         #contact { background: var(--card-bg); backdrop-filter: blur(20px); }
         .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
@@ -699,7 +740,7 @@
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 25px rgba(0, 245, 255, 0.3); }
         .submit-btn { background: var(--gradient-1); color: var(--dark-bg); border: none; padding: 20px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; cursor: pointer; width: 100%; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .submit-btn:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 245, 255, 0.4); }
-        
+
         /* Footer */
         footer { text-align: center; padding: 80px 0 40px; border-top: 1px solid var(--card-border); }
         .social-links a { width: 60px; height: 60px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 1.6rem; text-decoration: none; transition: all 0.4s ease; margin: 0 15px 40px; }
@@ -707,12 +748,12 @@
         .social-links a:nth-child(1):hover { background: #0077b5; }
         .social-links a:nth-child(2):hover { background: #ffffff; }
         .social-links a:nth-child(3):hover { background: #1DA1F2; }
-        
+
         /* Keyframes & Responsive */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slideInLeft { from { opacity: 0; transform: translateX(-100px); } to { opacity: 1; transform: translateX(0); } }
         @keyframes slideInRight { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
-        
+
         /* Responsive Navigation */
         @media (max-width: 768px) {
             .navbar {
@@ -722,11 +763,11 @@
                 padding: 15px;
                 border-radius: 30px;
             }
-            
+
             .hamburger {
                 display: flex;
             }
-            
+
             .nav-menu {
                 position: absolute;
                 top: 100%;
@@ -745,38 +786,38 @@
                 transition: all 0.3s ease;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             }
-            
+
             .nav-menu.active {
                 transform: translateY(10px);
                 opacity: 1;
                 visibility: visible;
             }
-            
+
             .nav-menu.active ~ .hamburger span:nth-child(1) {
                 transform: rotate(45deg) translate(6px, 6px);
             }
-            
+
             .nav-menu.active ~ .hamburger span:nth-child(2) {
                 opacity: 0;
             }
-            
+
             .nav-menu.active ~ .hamburger span:nth-child(3) {
                 transform: rotate(-45deg) translate(6px, -6px);
             }
-            
+
             .hamburger span {
                 transition: all 0.3s ease;
             }
         }
-        
+
         @media (max-width: 1024px) {
-            .hero-content, #about .about-content, .contact-container, .achievements-list { grid-template-columns: 1fr; text-align: center; }
+            .hero-content, #about .about-content, .contact-container, .achievements-list, .services-container { grid-template-columns: 1fr; text-align: center; }
             .timeline-item.left, .timeline-item.right { text-align: left; }
             .holographic-display { height: 400px; }
             .hologram-container { width: 300px; height: 300px; }
             .profile-hologram { width: 150px; height: 150px; }
         }
-        
+
         @media (max-width: 768px) {
             .timeline::after { left: 20px; }
             .timeline-item { width: 100%; padding-left: 60px; padding-right: 10px; }
@@ -799,12 +840,12 @@
             <div class="loader-ring"></div>
         </div>
     </div>
-    
+
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
-    
+
     <!-- Enhanced Animated Background -->
     <div class="animated-bg" id="animated-bg">
         <div class="neural-network" id="neuralNetwork"></div>
@@ -813,20 +854,20 @@
             <div class="shape"></div>
             <div class="shape"></div>
         </div>
-        
+
         <!-- Floating 3D Elements -->
         <div class="floating-3d-element"></div>
         <div class="floating-3d-element"></div>
         <div class="floating-3d-element"></div>
     </div>
-    
+
     <!-- Holographic Cursor -->
     <div class="holographic-cursor" id="holographic-cursor">
         <div class="cursor-core">
             <div class="cursor-ring"></div>
         </div>
     </div>
-    
+
     <!-- Navigation - Responsive -->
     <nav class="navbar" id="navbar">
         <div class="logo">MazenAR</div>
@@ -837,6 +878,7 @@
             <li><a href="#education" class="nav-link">Education</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
@@ -845,23 +887,23 @@
             <span></span>
         </div>
     </nav>
-    
+
     <!-- Cover Section -->
     <section id="cover" class="section">
         <div class="container hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">MAZEN ABD ELRAHEEM</h1>
                 <h2 class="hero-subtitle"> Data Engineer</h2>
-                
+
                 <!-- Enhanced Typing Animation -->
                 <div class="typing-container">
                     <span class="typing-text" id="typingText"></span>
                     <span class="holographic-cursor-typing">|</span>
                 </div>
-                
+
                 <p class="hero-description">
-                    Results-driven Software Engineer with expertise in computer vision and machine learning applications. 
-                    Proven track record in developing intelligent systems and facial recognition solutions. 
+                    Results-driven Software Engineer with expertise in computer vision and machine learning applications.
+                    Proven track record in developing intelligent systems and facial recognition solutions.
                     Seeking to leverage advanced AI development skills to contribute to innovative technology solutions.
                 </p>
                 <a href="#contact" class="cta-holographic">
@@ -869,7 +911,7 @@
                     Get In Touch
                 </a>
             </div>
-            
+
             <!-- Enhanced Holographic Display -->
             <div class="holographic-display">
                 <div class="hologram-container" id="hologramContainer">
@@ -947,7 +989,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
@@ -955,13 +997,13 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a <span style="color: var(--primary-color);">Results-driven Software Engineer</span> with expertise in computer vision and machine learning applications. 
+                        I'm a <span style="color: var(--primary-color);">Results-driven Software Engineer</span> with expertise in computer vision and machine learning applications.
                         My journey in tech has been fueled by a passion for creating intelligent systems that solve real-world problems.
                     </p>
                     <p>
-                        With a strong background in <span style="color: var(--secondary-color);">Python programming</span>, 
-                        <span style="color: var(--accent-color);">deep learning frameworks</span>, and 
-                        <span style="color: var(--primary-color);">image processing technologies</span>, 
+                        With a strong background in <span style="color: var(--secondary-color);">Python programming</span>,
+                        <span style="color: var(--accent-color);">deep learning frameworks</span>, and
+                        <span style="color: var(--primary-color);">image processing technologies</span>,
                         I've developed a proven track record in building innovative solutions.
                     </p>
                     <p>
@@ -975,7 +1017,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
@@ -1036,7 +1078,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
@@ -1063,7 +1105,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
@@ -1086,7 +1128,7 @@
                         View Details <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-image">
                         <!-- KUSTOMZONE PROJECT IMAGE: Replace with your project screenshot -->
@@ -1104,7 +1146,7 @@
                         Visit Website <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-image">
                         <!-- SMART HOME PROJECT IMAGE: Replace with your project screenshot -->
@@ -1125,7 +1167,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
@@ -1212,32 +1254,56 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <i class="fas fa-robot service-icon"></i>
+                    <h3>Custom AI & Vision Solutions</h3>
+                    <p>Developing intelligent systems that see and understand the world. From facial recognition to object detection, I build custom deep learning models tailored to your business needs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-database service-icon"></i>
+                    <h3>Data Engineering & Pipelines</h3>
+                    <p>Designing and building robust data pipelines to collect, process, and store data efficiently. I create automated ETL processes that ensure your data is clean, reliable, and ready for analysis.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h3>Intelligent Web Applications</h3>
+                    <p>Creating dynamic web applications with integrated AI features. I build full-stack solutions, from custom e-commerce platforms to smart business automation tools, providing a seamless user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Achievements Section -->
     <section id="achievements" class="section">
         <div class="container">
             <h2 class="section-title">Key Achievements</h2>
             <div class="achievements-list">
                 <div class="achievement-item">
-                    <i class="fas fa-tachometer-alt achievement-icon"></i> 
+                    <i class="fas fa-tachometer-alt achievement-icon"></i>
                     Optimized application performance by enhancing database queries
                 </div>
                 <div class="achievement-item">
-                    <i class="fas fa-bug-slash achievement-icon"></i> 
+                    <i class="fas fa-bug-slash achievement-icon"></i>
                     Improved code quality by implementing automated testing protocols
                 </div>
                 <div class="achievement-item">
-                    <i class="fas fa-clock achievement-icon"></i> 
+                    <i class="fas fa-clock achievement-icon"></i>
                     Increased operational efficiency with an automated attendance system
                 </div>
                 <div class="achievement-item">
-                    <i class="fas fa-users achievement-icon"></i> 
+                    <i class="fas fa-users achievement-icon"></i>
                     Contributed to team growth by mentoring new members
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="section">
         <div class="container">
@@ -1249,7 +1315,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -1294,7 +1360,7 @@
                             <textarea placeholder="Your Message..." required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> 
+                            <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
                     </form>
@@ -1302,7 +1368,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="social-links">
@@ -1318,7 +1384,7 @@
         </div>
         <p>&copy; 2025 Mazen Abd Elraheem. All rights reserved.</p>
     </footer>
-    
+
     <script>
         window.addEventListener('load', () => {
             const loadingScreen = document.getElementById('loadingScreen');
@@ -1330,7 +1396,7 @@
                 initializeScripts();
             }, 1800);
         });
-        
+
         function initializeScripts() {
             createNeuralNetwork();
             initializeScrollAnimations();
@@ -1343,12 +1409,13 @@
             initializeHologramInteractions();
             initializeResponsiveMenu();
         }
-        
+
         function createNeuralNetwork() {
             const neuralNetwork = document.getElementById('neuralNetwork');
+            if (!neuralNetwork) return;
             const nodeCount = 50;
             const nodes = [];
-            
+
             // Create nodes
             for (let i = 0; i < nodeCount; i++) {
                 const node = document.createElement('div');
@@ -1359,41 +1426,41 @@
                 neuralNetwork.appendChild(node);
                 nodes.push(node);
             }
-            
+
             // Create connections
             nodes.forEach((node, index) => {
                 if (index < nodes.length - 1) {
                     const connection = document.createElement('div');
                     connection.className = 'neural-connection';
-                    
+
                     const rect1 = node.getBoundingClientRect();
                     const rect2 = nodes[index + 1].getBoundingClientRect();
-                    
+
                     const distance = Math.sqrt(
-                        Math.pow(rect2.left - rect1.left, 2) + 
+                        Math.pow(rect2.left - rect1.left, 2) +
                         Math.pow(rect2.top - rect1.top, 2)
                     );
-                    
+
                     connection.style.width = distance + 'px';
                     connection.style.left = rect1.left + 'px';
                     connection.style.top = rect1.top + 'px';
                     connection.style.transform = `rotate(${Math.atan2(rect2.top - rect1.top, rect2.left - rect1.left)}rad)`;
-                    
+
                     neuralNetwork.appendChild(connection);
                 }
             });
         }
-        
+
         function initializeScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
             }, { threshold: 0.1 });
-            
+
             document.querySelectorAll('.section, .timeline-item').forEach(el => observer.observe(el));
         }
-        
+
         function initializeNavScroll() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -1408,10 +1475,10 @@
                     }
                 });
             }, { rootMargin: '-50% 0px -50% 0px' });
-            
+
             sections.forEach(section => observer.observe(section));
         }
-        
+
         let lastScrollTop = 0;
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', function() {
@@ -1419,68 +1486,69 @@
             navbar.style.top = (scrollTop > lastScrollTop && scrollTop > 150) ? '-150px' : '20px';
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
-        
+
         function initializeQuantumForm() {
             const form = document.getElementById('quantumContactForm');
             if (!form) return;
-            
+
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const btn = e.target.querySelector('button');
                 const originalHTML = btn.innerHTML;
                 btn.innerHTML = '<i class="fas fa-atom fa-spin"></i> Sending...';
                 btn.disabled = true;
-                
+
                 setTimeout(() => {
                     btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
                     btn.style.background = 'var(--gradient-3)';
-                    
+
                     setTimeout(() => {
                         btn.innerHTML = originalHTML;
                         btn.disabled = false;
                         btn.style.background = 'var(--gradient-1)';
                         form.reset();
-                        
+
                         // Success particle effect
                         createSuccessParticles();
                     }, 2500);
                 }, 2000);
             });
         }
-        
+
         function initializeCursor() {
             const cursor = document.getElementById('holographic-cursor');
             if (!cursor) return;
-            
+
             window.addEventListener('mousemove', e => {
                 cursor.style.left = e.clientX + 'px';
                 cursor.style.top = e.clientY + 'px';
             });
-            
+
             document.querySelectorAll('a, button, .skill-card').forEach(el => {
                 el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(1)');
                 el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
             });
         }
-        
+
         function initializeTypingAnimation() {
             const phrases = [
                 "Machine Learning Engineer",
-                "Computer Vision Specialist", 
+                "Computer Vision Specialist",
                 "Data Science Enthusiast",
                 "Full-Stack Developer",
                 "AI Solutions Architect",
                 "Problem Solver"
             ];
-            
+
             let currentPhrase = 0;
             let currentChar = 0;
             let isDeleting = false;
             const typingElement = document.getElementById('typingText');
-            
+            if (!typingElement) return;
+
             function quantumType() {
                 const phrase = phrases[currentPhrase];
-                
+
                 if (isDeleting) {
                     typingElement.textContent = phrase.substring(0, currentChar - 1);
                     currentChar--;
@@ -1488,23 +1556,24 @@
                     typingElement.textContent = phrase.substring(0, currentChar + 1);
                     currentChar++;
                 }
-                
+
                 if (!isDeleting && currentChar === phrase.length) {
                     setTimeout(() => isDeleting = true, 2500);
                 } else if (isDeleting && currentChar === 0) {
                     isDeleting = false;
                     currentPhrase = (currentPhrase + 1) % phrases.length;
                 }
-                
+
                 const speed = isDeleting ? 75 : 120;
                 setTimeout(quantumType, speed);
             }
-            
+
             setTimeout(quantumType, 2500);
         }
-        
+
         function initializeScrollProgress() {
             const scrollProgress = document.getElementById('scrollProgress');
+            if (!scrollProgress) return;
             window.addEventListener('scroll', () => {
                 const scrollTop = window.pageYOffset;
                 const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -1512,15 +1581,15 @@
                 scrollProgress.style.width = scrollPercent + '%';
             });
         }
-        
+
         function initializeCounterAnimations() {
             const counters = document.querySelectorAll('.stat-number-holo[data-target]');
-            
+
             const animateCounter = (counter) => {
                 const target = +counter.getAttribute('data-target');
                 const increment = target / 150;
                 let current = 0;
-                
+
                 const updateCounter = () => {
                     if (current < target) {
                         current += increment;
@@ -1530,10 +1599,10 @@
                         counter.textContent = target;
                     }
                 };
-                
+
                 updateCounter();
             };
-            
+
             const heroObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1544,28 +1613,31 @@
                     }
                 });
             });
-            
-            heroObserver.observe(document.querySelector('#cover'));
+            const coverSection = document.querySelector('#cover');
+            if (coverSection) {
+               heroObserver.observe(coverSection);
+            }
         }
-        
+
         function initializeHologramInteractions() {
             const hologram = document.getElementById('hologramContainer');
+            if (!hologram) return;
             let isMouseOver = false;
-            
+
             hologram.addEventListener('mouseenter', () => {
                 isMouseOver = true;
                 hologram.style.animationPlayState = 'paused';
             });
-            
+
             hologram.addEventListener('mouseleave', () => {
                 isMouseOver = false;
                 hologram.style.animationPlayState = 'running';
                 hologram.style.transform = '';
             });
-            
+
             hologram.addEventListener('mousemove', (e) => {
                 if (!isMouseOver) return;
-                
+
                 const rect = hologram.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -1573,15 +1645,15 @@
                 const centerY = rect.height / 2;
                 const rotateX = (y - centerY) / 8;
                 const rotateY = (centerX - x) / 8;
-                
+
                 hologram.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(50px)`;
             });
         }
-        
+
         function createSuccessParticles() {
             const container = document.body;
             const colors = ['#00f5ff', '#ff0080', '#7c3aed', '#00ff80'];
-            
+
             for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
                 particle.style.position = 'fixed';
@@ -1594,9 +1666,9 @@
                 particle.style.pointerEvents = 'none';
                 particle.style.zIndex = '10000';
                 particle.style.boxShadow = `0 0 10px ${particle.style.backgroundColor}`;
-                
+
                 container.appendChild(particle);
-                
+
                 // Animate particle
                 particle.animate([
                     { transform: 'translate(0, 0) scale(0)', opacity: 1 },
@@ -1610,15 +1682,16 @@
                 });
             }
         }
-        
+
         function initializeResponsiveMenu() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
-            
+            if (!hamburger || !navMenu) return;
+
             hamburger.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
             });
-            
+
             // Close menu when clicking on a link
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
