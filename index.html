@@ -583,29 +583,46 @@
         }
         .project-link:hover { transform: translateX(10px); }
 
-        /* Skills Section - Fixed Flip Cards */
+        /* Skills Section - Fixed Flip Cards (Wrapper Pattern) */
         .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; perspective: 1500px; }
         .skill-card {
-            height: 350px; position: relative; cursor: pointer;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.65, 0.05, 0.36, 1);
+            height: 350px; 
+            position: relative; 
+            cursor: pointer;
         }
-        .skill-card:hover {
+        .skill-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+        .skill-card:hover .skill-card-inner {
             transform: rotateY(180deg);
         }
         .skill-face {
-            position: absolute; width: 100%; height: 100%;
-            backface-visibility: hidden; border-radius: 25px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 30px; box-sizing: border-box;
+            position: absolute; 
+            width: 100%; 
+            height: 100%;
+            backface-visibility: hidden; 
+            -webkit-backface-visibility: hidden;
+            border-radius: 25px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            padding: 30px; 
+            box-sizing: border-box;
         }
         .skill-front {
-            background: var(--card-bg); border: 2px solid var(--card-border);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 16, 40, 0.95); 
+            border: 2px solid var(--card-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         .skill-back {
-            background: var(--card-bg); border: 2px solid var(--card-border);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 16, 40, 0.95); 
+            border: 2px solid var(--card-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             transform: rotateY(180deg);
             overflow-y: auto;
             scrollbar-width: thin;
@@ -684,6 +701,49 @@
             color: var(--text-gray);
             font-size: 1.1rem;
             line-height: 1.8;
+        }
+
+        /* Mini Services Tags */
+        .mini-services-wrapper {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .mini-services-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-shadow: var(--neon-glow) var(--primary-color);
+        }
+        .mini-services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .mini-service-tag {
+            background: rgba(0, 245, 255, 0.08);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            color: var(--text-light);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .mini-service-tag:hover {
+            background: rgba(0, 245, 255, 0.15);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 245, 255, 0.2);
+        }
+        .mini-service-tag i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
         }
 
         /* Education Section */
@@ -1255,6 +1315,25 @@
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="virtual-air-drawing.png" alt="Virtual Air Drawing - Gesture Control Drawing App">
+                    </div>
+                    <h3>Virtual Air Drawing – Gesture Canvas</h3>
+                    <p>A professional-grade AI computer vision drawing application that lets you draw in the air using hand gestures. Features Kalman filtering for smooth strokes, a 3-mode safety system, advanced brush types (Neon, Glow, Spray), and intelligent shape tools.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">MediaPipe</span>
+                        <span class="project-tag">OpenCV</span>
+                        <span class="project-tag">NumPy</span>
+                        <span class="project-tag">Kalman Filter</span>
+                        <span class="project-tag">PIL</span>
+                    </div>
+                    <a href="https://github.com/mazen-abd-elraheem" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1265,88 +1344,96 @@
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skill-card">
-                    <div class="skill-face skill-front">
-                        <i class="fas fa-code skill-icon"></i>
-                        <h3 class="skill-title">Technical Skills</h3>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <ul class="skill-list">
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Python</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> JavaScript</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> C++</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Java</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> TensorFlow</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Keras</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> OpenCV</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> scikit-learn</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> NumPy</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Pandas</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Flask</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Django</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> HTML</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> CSS</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> MySQL</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> SQLite</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Git</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Docker</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> AWS</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Azure</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> FastAPI</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Jupyter Notebook</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> spaCy</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Prolog</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> MediaPipe</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Pygame</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Flet</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-face skill-front">
-                        <i class="fas fa-brain skill-icon"></i>
-                        <h3 class="skill-title">AI & ML Expertise</h3>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <ul class="skill-list">
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Face Recognition</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Image Processing</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Object Detection</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> CNN</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Machine Learning</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Deep Learning</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Computer Vision</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Data Analysis</li>
-                        </ul>
+                    <div class="skill-card-inner">
+                        <div class="skill-face skill-front">
+                            <i class="fas fa-code skill-icon"></i>
+                            <h3 class="skill-title">Technical Skills</h3>
+                        </div>
+                        <div class="skill-face skill-back">
+                            <ul class="skill-list">
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Python</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> JavaScript</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> C++</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Java</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> TensorFlow</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Keras</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> OpenCV</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> scikit-learn</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> NumPy</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Pandas</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Flask</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Django</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> HTML</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> CSS</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> MySQL</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> SQLite</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Git</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Docker</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> AWS</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Azure</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> FastAPI</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Jupyter Notebook</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> spaCy</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Prolog</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> MediaPipe</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Pygame</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Flet</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-face skill-front">
-                        <i class="fas fa-users skill-icon"></i>
-                        <h3 class="skill-title">Soft Skills</h3>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <ul class="skill-list">
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Team Collaboration</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Communication Skills</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Problem-Solving</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Adaptability</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Time Management</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Critical Thinking</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Attention to Detail</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Growth Mindset</li>
-                        </ul>
+                    <div class="skill-card-inner">
+                        <div class="skill-face skill-front">
+                            <i class="fas fa-brain skill-icon"></i>
+                            <h3 class="skill-title">AI & ML Expertise</h3>
+                        </div>
+                        <div class="skill-face skill-back">
+                            <ul class="skill-list">
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Face Recognition</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Image Processing</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Object Detection</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> CNN</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Machine Learning</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Deep Learning</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Computer Vision</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Data Analysis</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-face skill-front">
-                        <i class="fas fa-language skill-icon"></i>
-                        <h3 class="skill-title">Languages</h3>
+                    <div class="skill-card-inner">
+                        <div class="skill-face skill-front">
+                            <i class="fas fa-users skill-icon"></i>
+                            <h3 class="skill-title">Soft Skills</h3>
+                        </div>
+                        <div class="skill-face skill-back">
+                            <ul class="skill-list">
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Team Collaboration</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Communication Skills</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Problem-Solving</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Adaptability</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Time Management</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Critical Thinking</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Attention to Detail</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Growth Mindset</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="skill-face skill-back">
-                        <ul class="skill-list">
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> Arabic (Native)</li>
-                            <li class="skill-item"><i class="fas fa-chevron-right"></i> English (Professional Proficiency)</li>
-                        </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-face skill-front">
+                            <i class="fas fa-language skill-icon"></i>
+                            <h3 class="skill-title">Languages</h3>
+                        </div>
+                        <div class="skill-face skill-back">
+                            <ul class="skill-list">
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> Arabic (Native)</li>
+                                <li class="skill-item"><i class="fas fa-chevron-right"></i> English (Professional Proficiency)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1359,19 +1446,97 @@
             <h2 class="section-title">Services</h2>
             <div class="services-container">
                 <div class="service-card">
+                    <i class="fas fa-hand-pointer service-icon"></i>
+                    <h3>Gesture-Based Interfaces</h3>
+                    <p>Building touchless, intuitive human-computer interaction systems using MediaPipe and OpenCV. From air drawing applications to virtual instruments, I create innovative gesture-controlled experiences with Kalman filtering for precision.</p>
+                </div>
+                <div class="service-card">
                     <i class="fas fa-robot service-icon"></i>
-                    <h3>Custom AI & Vision Solutions</h3>
-                    <p>Developing intelligent systems that see and understand the world. From facial recognition to object detection, I build custom deep learning models tailored to your business needs.</p>
+                    <h3>Computer Vision & AI</h3>
+                    <p>Developing intelligent systems that see and understand the world. From facial recognition and real-time hand tracking to object detection, I build custom deep learning models with TensorFlow and OpenCV tailored to your needs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3>Healthcare AI Solutions</h3>
+                    <p>Creating hybrid AI medical systems combining Machine Learning, Logic-Based Reasoning, and NLP for intelligent diagnosis. I integrate symptom extraction, voice recognition, and radiology image analysis for comprehensive healthcare platforms.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cash-register service-icon"></i>
+                    <h3>Enterprise Business Systems</h3>
+                    <p>Building full-stack Point of Sale and retail management solutions with multi-tier security, bilingual support, recipe-based inventory tracking, and real-time analytics. Complete business automation from the ground up.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-database service-icon"></i>
-                    <h3>Data Engineering & Pipelines</h3>
-                    <p>Designing and building robust data pipelines to collect, process, and store data efficiently. I create automated ETL processes that ensure your data is clean, reliable, and ready for analysis.</p>
+                    <h3>Data Engineering & APIs</h3>
+                    <p>Designing robust data pipelines and RESTful APIs for smart city applications and IoT integration. I create scalable backend systems with FastAPI and Flask that process, store, and serve data efficiently.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-laptop-code service-icon"></i>
-                    <h3>Intelligent Web Applications</h3>
-                    <p>Creating dynamic web applications with integrated AI features. I build full-stack solutions, from custom e-commerce platforms to smart business automation tools, providing a seamless user experience.</p>
+                    <h3>Custom Web Applications</h3>
+                    <p>Creating dynamic web applications with integrated AI features. From e-commerce platforms to smart business tools, I build full-stack solutions using Flask, Django, and modern frontend technologies.</p>
+                </div>
+            </div>
+
+            <!-- Mini Services -->
+            <div class="mini-services-wrapper">
+                <h3 class="mini-services-title">Specialized Capabilities</h3>
+                <div class="mini-services-grid">
+                    <!-- Computer Vision -->
+                    <span class="mini-service-tag"><i class="fas fa-hand-paper"></i> Hand Gesture Recognition</span>
+                    <span class="mini-service-tag"><i class="fas fa-hand-point-up"></i> Real-time Hand Tracking</span>
+                    <span class="mini-service-tag"><i class="fas fa-user-circle"></i> Face Detection</span>
+                    <span class="mini-service-tag"><i class="fas fa-id-card"></i> Face Recognition</span>
+                    <span class="mini-service-tag"><i class="fas fa-smile"></i> Emotion Detection</span>
+                    <span class="mini-service-tag"><i class="fas fa-search"></i> Object Detection</span>
+                    <span class="mini-service-tag"><i class="fas fa-video"></i> Real-time Video Processing</span>
+                    <span class="mini-service-tag"><i class="fas fa-image"></i> Image Processing</span>
+                    <span class="mini-service-tag"><i class="fas fa-filter"></i> Kalman Filter Integration</span>
+                    
+                    <!-- AI/ML -->
+                    <span class="mini-service-tag"><i class="fas fa-brain"></i> Deep Learning Models</span>
+                    <span class="mini-service-tag"><i class="fas fa-project-diagram"></i> CNN Architecture</span>
+                    <span class="mini-service-tag"><i class="fas fa-cogs"></i> ML Model Training</span>
+                    <span class="mini-service-tag"><i class="fas fa-chart-line"></i> Predictive Analytics</span>
+                    
+                    <!-- NLP & Voice -->
+                    <span class="mini-service-tag"><i class="fas fa-comment-dots"></i> NLP & Text Processing</span>
+                    <span class="mini-service-tag"><i class="fas fa-microphone"></i> Voice Recognition</span>
+                    <span class="mini-service-tag"><i class="fas fa-language"></i> Sentiment Analysis</span>
+                    
+                    <!-- Healthcare -->
+                    <span class="mini-service-tag"><i class="fas fa-heartbeat"></i> Medical Diagnosis AI</span>
+                    <span class="mini-service-tag"><i class="fas fa-x-ray"></i> Radiology Image Analysis</span>
+                    <span class="mini-service-tag"><i class="fas fa-notes-medical"></i> Symptom Extraction</span>
+                    
+                    <!-- Audio/DSP -->
+                    <span class="mini-service-tag"><i class="fas fa-music"></i> Audio Synthesis & DSP</span>
+                    <span class="mini-service-tag"><i class="fas fa-keyboard"></i> Virtual Instruments</span>
+                    
+                    <!-- Business Systems -->
+                    <span class="mini-service-tag"><i class="fas fa-shopping-cart"></i> POS System Development</span>
+                    <span class="mini-service-tag"><i class="fas fa-boxes"></i> Inventory Management</span>
+                    <span class="mini-service-tag"><i class="fas fa-store"></i> E-commerce Solutions</span>
+                    <span class="mini-service-tag"><i class="fas fa-user-shield"></i> RBAC Security</span>
+                    <span class="mini-service-tag"><i class="fas fa-file-pdf"></i> PDF Report Generation</span>
+                    <span class="mini-service-tag"><i class="fas fa-globe"></i> Multi-language Support</span>
+                    
+                    <!-- Development -->
+                    <span class="mini-service-tag"><i class="fas fa-server"></i> RESTful API Development</span>
+                    <span class="mini-service-tag"><i class="fas fa-database"></i> Database Design</span>
+                    <span class="mini-service-tag"><i class="fas fa-tachometer-alt"></i> Query Optimization</span>
+                    <span class="mini-service-tag"><i class="fas fa-desktop"></i> Desktop App Development</span>
+                    <span class="mini-service-tag"><i class="fas fa-code"></i> Flask/Django Web Apps</span>
+                    <span class="mini-service-tag"><i class="fas fa-chart-bar"></i> Data Visualization</span>
+                    
+                    <!-- IoT & Smart Systems -->
+                    <span class="mini-service-tag"><i class="fas fa-city"></i> Smart City Integration</span>
+                    <span class="mini-service-tag"><i class="fas fa-wifi"></i> IoT Solutions</span>
+                    <span class="mini-service-tag"><i class="fas fa-network-wired"></i> LAN Monitoring</span>
+                    
+                    <!-- Accessibility -->
+                    <span class="mini-service-tag"><i class="fas fa-universal-access"></i> Accessibility Tools</span>
+                    <span class="mini-service-tag"><i class="fas fa-mouse-pointer"></i> Touchless Interfaces</span>
+                    <span class="mini-service-tag"><i class="fas fa-paint-brush"></i> Air Drawing Systems</span>
                 </div>
             </div>
         </div>
