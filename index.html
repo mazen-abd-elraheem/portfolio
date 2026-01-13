@@ -800,6 +800,32 @@
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 25px rgba(0, 245, 255, 0.3); }
         .submit-btn { background: var(--gradient-1); color: var(--dark-bg); border: none; padding: 20px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; cursor: pointer; width: 100%; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .submit-btn:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 245, 255, 0.4); }
+        .submit-btn:disabled { cursor: not-allowed; opacity: 0.8; transform: none; }
+        
+        /* Form Status Messages */
+        .form-status {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeInUp 0.3s ease;
+        }
+        .form-status.success {
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid rgba(0, 255, 136, 0.4);
+            color: #00ff88;
+        }
+        .form-status.error {
+            background: rgba(255, 68, 68, 0.15);
+            border: 1px solid rgba(255, 68, 68, 0.4);
+            color: #ff6b6b;
+        }
+        .form-status i {
+            font-size: 1.2rem;
+        }
 
         /* Footer */
         footer { text-align: center; padding: 80px 0 40px; border-top: 1px solid var(--card-border); }
@@ -1612,21 +1638,34 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form id="quantumContactForm">
+                    <!-- 
+                        IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID
+                        1. Go to https://formspree.io/ and sign up (free)
+                        2. Create a new form and get the form endpoint
+                        3. Replace 'YOUR_FORM_ID' below with your form ID (e.g., 'xwkgzpln')
+                    -->
+                    <form id="contactForm" action="https://formspree.io/f/mqeekdyj" method="POST">
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- Custom subject line -->
+                        <input type="hidden" name="_subject" value="New Portfolio Contact from Website">
+                        
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message..." required></textarea>
+                            <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">
                             <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
                     </form>
+                    <div id="formStatus" class="form-status" style="display:none;"></div>
                 </div>
             </div>
         </div>
@@ -1751,30 +1790,65 @@
         }, false);
 
         function initializeQuantumForm() {
-            const form = document.getElementById('quantumContactForm');
+            const form = document.getElementById('contactForm');
             if (!form) return;
 
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const btn = e.target.querySelector('button');
+                const btn = form.querySelector('button[type="submit"]');
+                const statusDiv = document.getElementById('formStatus');
                 const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-atom fa-spin"></i> Sending...';
+                
+                // Show loading state
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 btn.disabled = true;
+                statusDiv.style.display = 'none';
 
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
-                    btn.style.background = 'var(--gradient-3)';
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Success
+                        btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
+                        btn.style.background = 'linear-gradient(135deg, #00ff88, #00cc66)';
+                        statusDiv.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.';
+                        statusDiv.className = 'form-status success';
+                        statusDiv.style.display = 'block';
+                        form.reset();
+                        
+                        // Success particle effect
+                        createSuccessParticles();
+
+                        setTimeout(() => {
+                            btn.innerHTML = originalHTML;
+                            btn.disabled = false;
+                            btn.style.background = 'var(--gradient-1)';
+                            statusDiv.style.display = 'none';
+                        }, 4000);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    // Error
+                    btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error!';
+                    btn.style.background = 'linear-gradient(135deg, #ff4444, #cc0000)';
+                    statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Oops! Something went wrong. Please try again or email me directly.';
+                    statusDiv.className = 'form-status error';
+                    statusDiv.style.display = 'block';
 
                     setTimeout(() => {
                         btn.innerHTML = originalHTML;
                         btn.disabled = false;
                         btn.style.background = 'var(--gradient-1)';
-                        form.reset();
-
-                        // Success particle effect
-                        createSuccessParticles();
-                    }, 2500);
-                }, 2000);
+                    }, 3000);
+                }
             });
         }
 
